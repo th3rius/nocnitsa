@@ -1,16 +1,14 @@
 title: Nocnitsa
-email: gabrielhk3@gmail.com
 description: >-
   black magic code
-baseurl: ""
-url: ""
-twitter_username: gabhk3
-github_username: th3rius
+
+# Build settings
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+
+# Minima settings
 google_analytics: G-MHYL9TY0PV
 minima:
   skin: auto
-
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
