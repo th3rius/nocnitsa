@@ -86,7 +86,7 @@ async function bootstrap() {
   });
 }
 
-bootstrap()
+bootstrap();
 {% endhighlight %}
 
 Lastly, the start of the show: a Lambda handler that uses our Express instance.
@@ -146,7 +146,7 @@ npm run build
 (cd dist/ && zip -r - ./) >serverless-express-example.zip
 # Replace `serverless-expres-lambda` with the name of your Lambda function
 aws lambda update-function-code \
-  --function-name serverless-express-example
+  --function-name serverless-express-example \
   --zip-file file://serverless-express-example.zip
 {% endhighlight %}
 
