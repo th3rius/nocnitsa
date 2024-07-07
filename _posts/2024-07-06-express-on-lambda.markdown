@@ -41,7 +41,7 @@ Firstly, we initialize our express Instance. Separating the Express instance in
 its own module gives us the ability to use a common configuration for both the
 Lambda handler and a develop server.
 
-{% highlight js %}
+```js
 // app.js
 
 import express from "express";
@@ -61,13 +61,13 @@ export default async function app() {
 
   return expressApp;
 }
-{% endhighlight %}
+```
 
 Next, a custom server that we can use for development. This provides a more
 typical development experience than emulating Lambda locally. You can also use
 this anywhere you need a server.
 
-{% highlight js %}
+```js
 // main.js
 
 import app from "./app";
@@ -81,18 +81,18 @@ async function bootstrap() {
   const server = http.createServer(expressApp);
 
   server.listen(PORT, HOST, () => {
-    const {address, port} = server.address();
+    const { address, port } = server.address();
     console.log(`Server is running at http://${address}:${port}! 👾`);
   });
 }
 
 bootstrap();
-{% endhighlight %}
+```
 
 Lastly, the start of the show: a Lambda handler that uses our Express instance.
 This is what we are going to deploy to the cloud.
 
-{% highlight js %}
+```js
 // lambda.js
 
 import app from "./app";
@@ -107,18 +107,18 @@ let serverlessExpressApp;
 export async function handler(event, context) {
   if (!serverlessExpressApp) {
     const expressApp = await app();
-    serverlessExpressApp = serverlessExpress({app: expressApp});
+    serverlessExpressApp = serverlessExpress({ app: expressApp });
   }
 
   return serverlessExpressApp(event, context);
 }
-{% endhighlight %}
+```
 
 ## Run, build and deploy
 
 [`@vercel/ncc`](https://www.npmjs.com/package/@vercel/ncc) is a lovely utility
 that takes care of the complexity of the building process because it also
-handles [native modules](https://nodejs.org/api/addons.html) and minification. 
+handles [native modules](https://nodejs.org/api/addons.html) and minification.
 
 Having a small bundle is ideal for container-based applications because it
 takes less times to load into memory, reducing cold boots, and consequentially,
@@ -126,29 +126,28 @@ costs.
 
 Setting it up is pretty easy:
 
-
-{% highlight jsonc %}
+```jsonc
 {
   "main": "src/main",
   "scripts": {
     "start": "ncc run",
     // `-m` flag minifies the code!
-    "build": "ncc build -m src/lambda"
+    "build": "ncc build -m src/lambda",
   },
   // ...
 }
-{% endhighlight %}
+```
 
 And this is how you deploy the code:
 
-{% highlight sh %}
+```sh
 npm run build
 (cd dist/ && zip -r - ./) >serverless-express-example.zip
 # Replace `serverless-expres-lambda` with the name of your Lambda function
 aws lambda update-function-code \
   --function-name serverless-express-example \
   --zip-file file://serverless-express-example.zip
-{% endhighlight %}
+```
 
 You can view the full code sample
 [here](https://github.com/th3rius/serverless-express-starter). Cheers!
