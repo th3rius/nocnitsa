@@ -1,9 +1,12 @@
 title: Nocnitsa
 description: Black magic code
+url: http://nocnitsa.com
 author:
   name: Gabriel de Oliveira
   email: "gabrielhk3@gmail.com"
 show_excerpts: true
+disqus:
+  shortname: nocnitsa
 
 # Build settings
 remote_theme: jekyll/minima
