@@ -17,6 +17,9 @@ too often is more technical than helpful can be quite the daunting task.
 Hopefully this trick up my sleeve will make your journey in the cloud a little
 more pleasant.
 
+TL;DR: [here's full code example on
+GitHub](https://github.com/th3rius/serverless-express-starter).
+
 ## Lambda and HTTP
 
 Lambda by itself is not aware and cannot receive HTTP requests—instead, [API
@@ -149,5 +152,5 @@ aws lambda update-function-code \
   --zip-file file://serverless-express-example.zip
 ```
 
-You can view the full code sample
+You can view the full code sample on GitHub
 [here](https://github.com/th3rius/serverless-express-starter). Cheers!
