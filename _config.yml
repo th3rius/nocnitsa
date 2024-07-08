@@ -6,7 +6,7 @@ author:
   email: "gabrielhk3@gmail.com"
 show_excerpts: true
 disqus:
-  shortname: nocnitsa
+  shortname: blackmagiccode
 
 # Build settings
 remote_theme: jekyll/minima
