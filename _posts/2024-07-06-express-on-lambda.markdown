@@ -87,7 +87,7 @@ async function bootstrap() {
   const server = http.createServer(expressApp);
 
   server.listen(PORT, HOST, () => {
-    const { address, port } = server.address();
+    const {address, port} = server.address();
     console.log(`Server is running at http://${address}:${port}! 👾`);
   });
 }
@@ -113,7 +113,7 @@ let serverlessExpressApp;
 export async function handler(event, context) {
   if (!serverlessExpressApp) {
     const expressApp = await app();
-    serverlessExpressApp = serverlessExpress({ app: expressApp });
+    serverlessExpressApp = serverlessExpress({app: expressApp});
   }
 
   return serverlessExpressApp(event, context);
