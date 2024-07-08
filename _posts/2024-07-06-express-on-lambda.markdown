@@ -4,6 +4,9 @@ title: "Hosting Express applications on Lambda"
 date: 2024-07-06 21:28:10 -0300
 categories: javascript
 tags: aws node express serverless lambda
+excerpt: >-
+  Hosting your Node.js API efficiently while keeping costs low can be a tricky
+  task. Here's how I do it.
 ---
 
 This might sound like an exquisite combination, but my few years using Lambda

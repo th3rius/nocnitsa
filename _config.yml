@@ -1,6 +1,9 @@
 title: Nocnitsa
-description: >-
-  black magic code
+description: Black magic code
+author:
+  name: Gabriel de Oliveira
+  email: "gabrielhk3@gmail.com"
+show_excerpts: true
 
 # Build settings
 remote_theme: jekyll/minima
@@ -12,3 +15,8 @@ plugins:
 google_analytics: G-MHYL9TY0PV
 minima:
   skin: auto
+  social_links:
+    - platform: github
+      user_url: "https://github.com/th3rius"
+    - platform: linkedin
+      user_url: "https://www.linkedin.com/in/gabrielhk3"
