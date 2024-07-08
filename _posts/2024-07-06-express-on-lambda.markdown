@@ -143,7 +143,7 @@ And this is how you deploy the code:
 ```sh
 npm run build
 (cd dist/ && zip -r - ./) >serverless-express-example.zip
-# Replace `serverless-expres-lambda` with the name of your Lambda function
+# Replace `serverless-express-lambda` with the name of your Lambda function
 aws lambda update-function-code \
   --function-name serverless-express-example \
   --zip-file file://serverless-express-example.zip
