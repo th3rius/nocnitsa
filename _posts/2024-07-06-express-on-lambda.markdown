@@ -152,7 +152,7 @@ npm run build
 # Replace `serverless-express-lambda` with the name of your Lambda function
 aws lambda update-function-code \
   --function-name serverless-express-example \
-  --zip-file file://serverless-express-example.zip
+  --zip-file fileb://serverless-express-example.zip
 ```
 
 You can view the full code sample on GitHub
