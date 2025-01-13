@@ -19,6 +19,7 @@ plugins:
 
 # Minima settings
 google_analytics: G-MHYL9TY0PV
+google_adsense: ca-pub-5238376130252175
 minima:
   skin: auto
   social_links:
