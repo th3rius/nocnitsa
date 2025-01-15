@@ -30,10 +30,10 @@ Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.ht
 will be the responsible for triggering our Lambda function whenever a request
 comes in.
 
-Conversely, Express cannot interprete these Lambda events. That's where
+Conversely, Express cannot interpret these Lambda events. That's where
 [`@codegenie/serverless-express`](https://www.npmjs.com/package/@codegenie/serverless-express)
 comes into play, allowing us to maintain portability and to make use of the
-well-stablished ecosystem while still making our application serverless.
+well-established ecosystem while still making our application serverless.
 
 Typically, I like to split my application entrypoint in three files:
 
@@ -87,7 +87,7 @@ async function bootstrap() {
   const server = http.createServer(expressApp);
 
   server.listen(PORT, HOST, () => {
-    const {address, port} = server.address();
+    const { address, port } = server.address();
     console.log(`Server is running at http://${address}:${port}! 👾`);
   });
 }
@@ -103,7 +103,7 @@ This is what we are going to deploy to the cloud.
 
 import app from "./app";
 import serverlessExpress from "@codegenie/serverless-express";
-import "source-map-support/register"; // Enables support for souce maps!
+import "source-map-support/register"; // Enables support for source maps!
 
 // We don't need to recreate the entire application if our Lambda
 // is already up and running when we receive a new request.
@@ -113,7 +113,7 @@ let serverlessExpressApp;
 export async function handler(event, context) {
   if (!serverlessExpressApp) {
     const expressApp = await app();
-    serverlessExpressApp = serverlessExpress({app: expressApp});
+    serverlessExpressApp = serverlessExpress({ app: expressApp });
   }
 
   return serverlessExpressApp(event, context);
