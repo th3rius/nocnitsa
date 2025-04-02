@@ -95,7 +95,7 @@ async function bootstrap() {
 bootstrap();
 ```
 
-Lastly, the start of the show: a Lambda handler that uses our Express instance.
+Lastly, the star of the show: a Lambda handler that uses our Express instance.
 This is what we are going to deploy to the cloud.
 
 ```js
