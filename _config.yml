@@ -23,7 +23,9 @@ google_adsense: ca-pub-5238376130252175
 minima:
   skin: auto
   social_links:
-    - platform: github
-      user_url: "https://github.com/th3rius"
-    - platform: linkedin
-      user_url: "https://www.linkedin.com/in/gabrielhk3"
+    - title: th3rius at GitHub
+      platform: github
+      url: "https://github.com/th3rius"
+    - title: Gabriel de Oliveira at LinkedIn
+      platform: linkedin
+      url: "https://www.linkedin.com/in/gabrielhk3"
