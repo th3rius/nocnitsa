@@ -24,8 +24,8 @@ minima:
   skin: auto
   social_links:
     - title: th3rius at GitHub
-      platform: github
+      icon: github
       url: "https://github.com/th3rius"
     - title: Gabriel de Oliveira at LinkedIn
-      platform: linkedin
+      icon: linkedin
       url: "https://www.linkedin.com/in/gabrielhk3"
